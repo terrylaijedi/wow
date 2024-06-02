@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .outer {
+            margin: auto;
+            height: 300px;
+            width: 400px;
+            border: 2px solid black;
+            position: relative;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .outer p {
+            margin: 20px 0 10px 0;
+            text-align: left;
+        }
+        .outer input[type="text"],
+        .outer input[type="password"] {
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #bt {
+            margin-top: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #bt:hover {
+            background: green;
+            font-size: 13px;
+        }
+    </style>
+    <script>
+        function fa() {
+            var a = document.getElementById("a");
+            var b = document.getElementById("b");
+            var bt = document.getElementById("bt");
+
+            if (a.value == "" || b.value == "") {
+                f();
+                a.style.border = "3px solid red";
+                b.style.border = "3px solid red";
+                bt.value = "Submit";
+            } else {
+                a.style.border = "3px solid green";
+                b.style.border = "3px solid green";
+                bt.value = "Enter";
+                bt.style.left = "50%";
+                bt.style.transform = "translateX(-50%)";
+            }
+        }
+
+        var flag = 1;
+
+        function f() {
+            var bt = document.getElementById("bt");
+            if (flag == 1) {
+                bt.style.left = "70%";
+                bt.style.transform = "translateX(-70%)";
+                flag = 2;
+            } else if (flag == 2) {
+                bt.style.left = "30%";
+                bt.style.transform = "translateX(-30%)";
+                flag = 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <h1>NIGGA</h1>
+        <p>Enter Id</p>
+        <input class="in" type="text" placeholder="Enter id" id="a"/>
+        <p>Enter Confirm Pass</p>
+        <input class="in" type="password" placeholder="Enter password" id="b"/>
+        <br>
+        <input type="submit" onmouseenter="fa()" onclick="alert('靠腰這樣你都按的到')" id="bt" value="Submit"/>
+    </div>
+</body>
+</html>
